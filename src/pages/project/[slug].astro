@@ -1,0 +1,30 @@
+---
+import SwiperProject from "@/components/Swiper";
+import Layout from "@/layouts/Layout.astro";
+import projects from "@/projects";
+const { slug } = Astro.params;
+const project = projects.find(project => project.slug === slug);
+const images = [
+  {
+    title: project.title,
+    metadata: {
+      content: {
+        url: project.thumbnail,
+      },
+    },
+    id: 1000000,
+  },
+  ...project.metadata.images,
+];
+---
+
+<Layout title={`Khroma - ${slug}`}>
+   <SwiperProject images={images} client:only />
+  <h1 class="my-10 text-5xl font-extrabold tracking-tight antialiased">
+    {project.title}
+  </h1>
+  <div
+    set:html={project.metadata.description}
+    class="my-10 text-xl tracking-tight antialiased"
+  />
+</Layout>

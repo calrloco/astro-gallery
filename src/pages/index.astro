@@ -1,0 +1,17 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Card from "../components/Card.astro";
+import { ParallaxScrollDemo } from "@/components/Parallax";
+import { createBucketClient } from "@cosmicjs/sdk";
+import { ParallaxScroll } from "@/ui/parallax-scroll";
+import HomeGMobile from "@/components/HomeGMobile.astro";
+import projects from "@/projects";
+
+  
+  
+---
+
+<Layout title="KHROMA">
+  <ParallaxScroll images={projects} client:load />
+  <HomeGMobile projects={projects}  />
+</Layout>

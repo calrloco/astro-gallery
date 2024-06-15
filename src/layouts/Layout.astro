@@ -1,0 +1,64 @@
+---
+import Footer from "@/components/Footer.astro";
+import Nav from "@/components/Nav.astro";
+import { ViewTransitions } from "astro:transitions";
+
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html class="font-gotham" lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/logo.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <ViewTransitions />
+    <title>{title}</title>
+  </head>
+  <body class="min-h-screen">
+    <header>
+      <Nav />
+    </header>
+    <main transition:animate="slide" class="mx-auto container pt-20 min-h-[80vh] px-10">
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>
+<style is:global>
+  /* Register Gotham Book */
+  @font-face {
+    font-family: "Gotham";
+    src: url("/fonts/GothamBook.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  /* Register Gotham Book Italic */
+  @font-face {
+    font-family: "Gotham";
+    src: url("/fonts/GothamBookItalic.ttf") format("truetype");
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  /* Register Gotham Medium */
+  @font-face {
+    font-family: "Gotham";
+    src: url("/fonts/GothamMedium_1.ttf") format("truetype");
+    font-weight: 500; /* Medium weight is generally considered to be 500 */
+    font-style: normal;
+    font-display: swap;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+</style>

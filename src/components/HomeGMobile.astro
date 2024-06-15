@@ -1,0 +1,21 @@
+---
+const { projects } = Astro.props;
+---
+
+<div class="grid gap-10 lg:hidden py-10">
+  {
+    projects.map((project: any) => (
+      <div>
+        <a href={`/project/${project.slug}`}>
+          <img
+            src={project.thumbnail}
+            class="w-full object-cover object-left-top rounded-lg"
+            height="400"
+            width="400"
+            alt="thumbnail"
+          />
+        </a>
+      </div>
+    ))
+  }
+</div>

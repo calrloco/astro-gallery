@@ -1,0 +1,39 @@
+---
+import { GridLayout } from "@/components/GridLayout";
+import Layout from "@/layouts/Layout.astro";
+---
+
+<Layout title="Contattaci">
+  <div transition:persist class="grid">
+    <article class="">
+      <h1
+        class="text-5xl py-10 font-extrabold tracking-tight antialiasedc pt-10 antialiased"
+      >
+        About us
+      </h1>
+      <div class="">
+        Benvenuti in Khroma, il luogo dove l'arte e la creatività prendono vita.
+        Situato nel cuore di Roma, siamo uno studio artistico appassionato di
+        trasformare spazi ordinari in esperienze straordinarie. Con una
+        dedizione incrollabile alla qualità e alla precisione, ci impegniamo a
+        creare opere d'arte che ispirano, emozionano e trasformano. La nostra
+        missione è semplice: portare colore e bellezza nelle vite dei nostri
+        clienti attraverso dipinti su serrande, murales vivaci, pubblicità
+        coinvolgenti e decorazioni su misura per eventi speciali. Ogni progetto
+        è un'opportunità per noi di esprimere la nostra passione e il nostro
+        impegno per l'arte, dando vita alle visioni dei nostri clienti con
+        maestria e creatività. Ciò che ci distingue è l'attenzione ai dettagli e
+        l'amore per l'arte che permea ogni aspetto del nostro lavoro. Siamo qui
+        per collaborare con te e trasformare le tue idee in realtà. Che tu stia
+        cercando di aggiungere un tocco artistico alla tua casa o di fare una
+        dichiarazione audace con un murale pubblicitario, Khroma è qui per
+        aiutarti a raggiungere i tuoi obiettivi artistici. Unisciti a noi nel
+        nostro viaggio artistico e lasciati ispirare dalla potenza dei colori.
+        Contattaci oggi per dare vita alle tue visioni con Khroma
+      </div>
+    </article>
+    <div class="pt-10 pb-20">
+      <GridLayout client:load />
+    </div>
+  </div>
+</Layout>

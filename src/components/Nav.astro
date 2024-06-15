@@ -1,0 +1,32 @@
+---
+import Btn from "./Btn.astro";
+---
+
+<nav id="nav" transition:persist class="nav transition-transform h-20 grid w-full fixed top-0 bg-white z-20">
+  <div class="w-full flex items-center justify-between container mx-auto px-10">
+    <a class="cursor-pointer" href="/">
+      <img class="h-[40px]" src="/logo.svg" alt="Logo" />
+    </a>
+    <Btn href="/about">About</Btn>
+  </div>
+</nav>
+
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', function () {
+    const nav = document.getElementById('nav');
+    let lastScrollTop = 0;
+    const topOffset = 50; // Threshold before hiding the navbar, adjust as needed for padding
+
+    window.addEventListener('scroll', function() {
+      let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      if (scrollTop > lastScrollTop && scrollTop > topOffset) {
+        // Scrolling down and not near the top
+        nav.style.transform = 'translateY(-100%)';
+      } else {
+        // Scrolling up or near the top
+        nav.style.transform = 'translateY(0)';
+      }
+      lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // For Mobile or negative scrolling
+    }, false);
+  });
+</script>
