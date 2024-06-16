@@ -1,4 +1,4 @@
-# PORCO DIO
+# astro 
 
 ```sh
 npm create astro@latest -- --template basics
